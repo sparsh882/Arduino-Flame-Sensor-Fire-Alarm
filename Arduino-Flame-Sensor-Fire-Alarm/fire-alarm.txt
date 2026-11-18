@@ -1,0 +1,30 @@
+const int buzzerPin = 9;
+const int fireSensorPin = 8;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(fireSensorPin, INPUT);
+}
+void loop()
+{
+  int fireValue = digitalRead(fireSensorPin);
+  Serial.println(fireValue);
+  if(fireValue == 0)
+  {
+    digitalWrite(buzzerPin, HIGH);
+    delay(5000);
+  }
+  else
+  {
+    digitalWrite(buzzerPin, LOW);
+  }
+  delay(500);
+}
+
+
+#Submitted BY -- 
+                    Sparsh Awasthi          (202310101110170)
+                    Amaan Beg               (202310101110032)
+                    Shubham Yadav           (202310101110132)
+                    Shivam Verma            (202310101110439)
